@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.12 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.19 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -436,6 +436,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .float-right {
   float: right;
 }
+.m-4 {
+  margin: 1rem;
+}
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -447,6 +450,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 .mt-6 {
   margin-top: 1.5rem;
@@ -460,6 +471,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
 .flex {
   display: flex;
 }
@@ -472,46 +486,82 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full {
   width: 100%;
 }
-.grid-flow-col {
-  grid-auto-flow: column;
-}
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
 .flex-col {
   flex-direction: column;
-}
-.place-content-evenly {
-  place-content: space-evenly;
-}
-.content-evenly {
-  align-content: space-evenly;
 }
 .justify-around {
   justify-content: space-around;
 }
-.justify-evenly {
-  justify-content: space-evenly;
+.justify-items-center {
+  justify-items: center;
 }
-.gap-7 {
-  gap: 1.75rem;
+.text-ellipsis {
+  text-overflow: ellipsis;
 }
 .rounded {
   border-radius: 0.25rem;
 }
-.bg-secondary {
+.bg-secondary-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 34 90 / var(--tw-bg-opacity));
 }
 .bg-primary-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(227 0 27 / var(--tw-bg-opacity));
+}
+.bg-original {
+  background-image: url('../images/mass/original.png');
+}
+.bg-italiana {
+  background-image: url('../images/mass/italiana.png');
+}
+.bg-sarten {
+  background-image: url('../images/mass/sarten.png');
+}
+.bg-orillaQueso {
+  background-image: url('../images/mass/orillaQueso.png');
+}
+.bg-crunchy {
+  background-image: url('../images/mass/crunchy.png');
+}
+.bg-mediana {
+  background-image: url('../images/size/mediana.png');
+}
+.bg-grande {
+  background-image: url('../images/size/grande.png');
+}
+.bg-familiar {
+  background-image: url('../images/size/familiar.png');
+}
+.bg-napolitana {
+  background-image: url('../images/speciality/napolitana.png');
+}
+.bg-hawaiana {
+  background-image: url('../images/speciality/hawaiana.png');
+}
+.bg-pepperoni {
+  background-image: url('../images/speciality/pepperoni.png');
+}
+.bg-vegetariana {
+  background-image: url('../images/speciality/vegetariana.png');
+}
+.bg-cuatroQuesos {
+  background-image: url('../images/speciality/cuatroQuesos.png');
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -535,6 +585,28 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.font-bold {
+  font-weight: 700;
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -572,30 +644,48 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fas.fa-bars {
     font-size: 35px;
 }
-.slider-container{
+
+.slider-container {
+  display: flex;
     max-width: 100vw;
     max-height: 400px;
+    overflow-x: scroll;
     -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    overflow-x: scroll;
-}
-.slider-container img {
-    width: 100%;
-    scroll-snap-align: center;
-    -o-object-fit: cover;
-       object-fit: cover;
 }
 
-.img-products{
+.slider-container img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    scroll-snap-align: center;
+}
+
+.img-products {
     max-height: 150px;
+}
+
+#hamburger {
+    cursor: pointer;
 }
 
 .hover\:bg-primary-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(176 0 21 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondary-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(78 91 242 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {
@@ -622,6 +712,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:flex-row {
