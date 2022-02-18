@@ -1,8 +1,6 @@
-const ORDER = []
-const PREORDER = []
-const CART = []
+const PREVIEW = []
 
-class finishPizza {
+class FinishPizza {
     constructor(mass, size, speciality) {
         this.mass = mass
         this.size = size
@@ -10,6 +8,19 @@ class finishPizza {
     }
 
 }
+
+class Carrito {
+    constructor() {
+        this.cart = []
+    }
+
+    addCart(pizza) {
+        this.cart.push(pizza)
+        localStorage.setItem('cart', JSON.stringify(this.cart))
+    }
+}
+
+const carrito = new Carrito()
 
 const MASS = [{
         id: 1,

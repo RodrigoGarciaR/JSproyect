@@ -57,21 +57,6 @@
 
             <div id="size" class="grid grid-cols-1 mx-4 justify-items-center md:grid-cols-3 lg:grid-cols-5">
 
-                <div class="p-10 my-5">
-                    <p class="text-lg font-bold text-center">
-                        mediana
-                    </p>
-                    <p class="text-center">
-                        $ 50
-                    </p>
-
-                    <p>
-                        <button
-                            class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
-                            id="s-${product.id}">Elegir tamaño
-                        </button>
-                    </p>
-                </div>
             </div>
         </div>
 
@@ -85,15 +70,54 @@
             </div>
         </div>
 
-        <!-- Agradecimiento -->
-        <div id="thanks" class="hidden">
-            <p class="my-20 text-3xl text-center">¡Muchas gracias por tu compra!</p>
+
+        <!-- Es correcta la pizza -->
+        <div id="question" class="hidden">
+            <p class="my-20 text-3xl text-center">¿Está correcta tu pizza?</p>
+            <div class="grid grid-cols-1 mb-10 justify-items-center">
+                <button
+                    class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
+                    id="confirmPreview">
+                    Si
+                </button>
+                <button
+                    class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
+                    id="deletePreview">
+                    No
+                </button>
+            </div>
         </div>
 
-        <!-- Resumen de pedido -->
-        <p class="text-2xl text-center">Este es el resumen de tu pedido</p>
-        <p class="text-xl text-center">El total de tu pedido es de: $<span id="totalOrder"></span></p>
-        <div id="order" class="grid grid-cols-1 mx-4 mb-10 justify-items-center md:grid-cols-3 lg:grid-cols-5">
+        <div id="thanks" class="hidden">
+            <p class="my-20 text-3xl text-center">¡Tu pizza se agregó al carrito!</p>
+        </div>
+
+        <!-- Reiniciar proceso -->
+        <div id="reset" class="hidden">
+            <p class="my-20 text-3xl text-center">¿Deseas comenzar de nuevo?</p>
+            <div class="grid grid-cols-1 mb-10 justify-items-center">
+                <button
+                    class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
+                    id="resetOrder">
+                    Empezar de nuevo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resumen de pedido -->
+
+    <p class="text-2xl text-center">Este es el resumen de tu pizza actual</p>
+    <p class="text-xl text-center">El total de tu pizza actual es de: $<span id="totalOrder"></span></p>
+    <div id="order" class="grid grid-cols-1 mx-4 mb-10 justify-items-center md:grid-cols-3 lg:grid-cols-5">
+    </div>
+
+    <!-- Carrito -->
+    <div class="my-10">
+        <p class="my-10 text-2xl text-center">Carrito de productos</p>
+        <div id="cart" class="grid grid-cols-2 gap-3 m-10">
+            <p class="col-span-2 text-xl text-center">CARRITO VACIO</p>
+
         </div>
     </div>
 
@@ -127,7 +151,6 @@
             </div>
         </div>
     </footer>
-
     <script src="../js/order.js"></script>
     <script src="../js/db.js"></script>
     <script src="../js/script.js"></script>
