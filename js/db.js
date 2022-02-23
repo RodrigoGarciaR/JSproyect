@@ -1,14 +1,5 @@
 const PREVIEW = []
 
-class FinishPizza {
-    constructor(mass, size, speciality) {
-        this.mass = mass
-        this.size = size
-        this.speciality = speciality
-    }
-
-}
-
 class Carrito {
     constructor() {
         this.cart = []
@@ -18,9 +9,25 @@ class Carrito {
         this.cart.push(pizza)
         localStorage.setItem('cart', JSON.stringify(this.cart))
     }
+
+    initCart() {
+        JSON.parse(localStorage.getItem('cart')) && JSON.parse(localStorage.getItem('cart')).forEach(element => this.cart.push(element))
+    }
+
+    deleteCart(productID) {
+        console.log(productID)
+        // let productToDelete = JSON.parse(localStorage.getItem('cart'))
+        // console.log(productToDelete)
+        // let productIndex = productToDelete.findIndex(e => e[0].productID === productID)
+        // console.log(productIndex)
+        // productToDelete.splice(productIndex, 1)
+        // console.log(productToDelete)
+        // localStorage.setItem('cart', JSON.stringify(productToDelete))
+    }
 }
 
 const carrito = new Carrito()
+carrito.initCart()
 
 const MASS = [{
         id: 1,

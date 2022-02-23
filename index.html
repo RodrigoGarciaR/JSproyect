@@ -22,19 +22,17 @@
             <a href="./index.html"><img src="./images/logo.png" alt="logotipo" class="logo-mobile"></a>
         </div>
         <div class="col-span-2 lg:hidden">
-            <i class="float-right mt-6 mr-10 text-white fas fa-bars"></i>
+            <i class="float-right mt-6 mr-10 text-white fas fa-bars" id="showMenu" onclick="showMenuMobile()"></i>
         </div>
-        <nav class="col-span-3 my-auto lg:col-span-1 lg:block">
-            <ul class="mr-10 text-center text-white lg:flex lg:justify-end lg:gap-x-12">
-                <a href="./pages/pizza.html">
-                    <li>Arma tu pizza</li>
-                </a>
-                <a href="#">
-                    <li>Mi orden</li>
-                </a>
+        <nav id="navMenu" class="hidden col-span-3 my-auto lg:col-span-1 lg:block">
+            <ul class="mr-10 text-right text-white lg:flex lg:justify-end lg:gap-x-12">                
+                    <li><a href="./pages/pizza.html">Arma tu pizza</a></li>                              
+                    <li><a href="#">Mi orden</a></li>                
             </ul>
         </nav>
     </header>
+
+    
     <!-- Imagen hero -->
     <div>
         <img src="./images/slide1.jpg" alt="" class="w-full">
@@ -87,6 +85,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

@@ -22,19 +22,21 @@
             <a href="../index.html"><img src="../images/logo.png" alt="logotipo" class="logo-mobile"></a>
         </div>
         <div class="col-span-2 lg:hidden">
-            <i class="float-right mt-6 mr-10 text-white fas fa-bars"></i>
+            <i class="float-right mt-6 mr-10 text-white fas fa-bars" id="showMenu" onclick="showMenuMobile()"></i>
         </div>
-        <nav class="hidden col-span-3 my-auto lg:col-span-1 lg:block">
-            <ul class="mr-10 text-center text-white lg:flex lg:justify-end lg:gap-x-12">
-                <a href="./pizza.html">
-                    <li>Arma tu pizza</li>
-                </a>
-                <a href="#">
-                    <li>Mi orden</li>
-                </a>
+        <nav id="navMenu" class="hidden col-span-3 my-auto lg:col-span-1 lg:block">
+            <ul class="mr-10 text-right text-white lg:flex lg:justify-end lg:gap-x-12">
+                <li><a href="./pizza.html">Arma tu pizza</a></li>
+                <li><a href="#">Mi orden</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Carrito -->
+
+
+
+    </div>
 
     <!-- Cotizador -->
 
@@ -121,6 +123,13 @@
         </div>
     </div>
 
+    <!-- Borrar carrito -->
+    <div class="text-center">
+        <button
+            class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
+            onclick="clearCart()">Borrar carrito</button>
+    </div>
+
     <!-- Footer -->
 
     <footer class="bg-secondary-200">
@@ -154,7 +163,6 @@
     <script src="../js/order.js"></script>
     <script src="../js/db.js"></script>
     <script src="../js/script.js"></script>
-
 </body>
 
 </html>

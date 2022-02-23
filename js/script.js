@@ -1,3 +1,6 @@
+// Inicio de armado de pizza
+// Selección de masa
+
 const startOrder = () => {
     let divMass = document.getElementById("mass")
     let listMass = ""
@@ -25,8 +28,6 @@ const registerClickeventMass = () => {
     }
 }
 
-
-
 const selectMass = (event) => {
     const massID = event.target.id.split("-")[1]
     const mass = MASS.find(p => p.id == massID)
@@ -37,6 +38,8 @@ const selectMass = (event) => {
     calculateTotalOrder()
     pickSize()
 }
+
+// Selección de tamaño
 
 const pickSize = () => {
     let divSize = document.getElementById("size")
@@ -73,6 +76,8 @@ const selectSize = (event) => {
     calculateTotalOrder()
     pickSpeciality()
 }
+
+// Selección de especialidad
 
 const pickSpeciality = () => {
     let divSpeciality = document.getElementById("speciality")
@@ -111,12 +116,26 @@ const selectSpeciality = (event) => {
     confirmOrder()
 }
 
+// ID producto cart
+
+const productIDinCart = () => {
+    let productID = localStorage.getItem('lastProductID') || "0"
+    let newProductID = JSON.parse(productID) + 1
+    localStorage.setItem('lastProductID', JSON.stringify(newProductID))
+    PREVIEW.unshift({
+        "productID": newProductID
+    })
+}
+
+// Botón confirmar/borrar pizza
+
 const confirmOrder = () => {
     let buttonConfirm = document.getElementById("confirmPreview")
     buttonConfirm.onclick = () => {
         document.getElementById("question").style.display = "none"
         document.getElementById("reset").style.display = "block"
         document.getElementById("thanks").style.display = "block"
+        productIDinCart()
         pushToCart()
         splicePreview()
         showOrder()
@@ -136,6 +155,8 @@ const confirmOrder = () => {
     }
 }
 
+// Reiniciar orden
+
 const resetOrder = () => {
     let buttonReset = document.getElementById("resetOrder")
     buttonReset.onclick = () => {
@@ -148,7 +169,7 @@ const resetOrder = () => {
 
 
 const pushToCart = () => {
-    carrito.addCart(PREVIEW)
+    carrito.addCart(PREVIEW.slice())
 }
 
 const splicePreview = () => {
@@ -185,18 +206,19 @@ const showCart = () => {
     let cartinHTML = ""
 
 
-    JSON.parse(localStorage.getItem('cart')).forEach(product => {
-        console.log(JSON.parse(localStorage.getItem('cart')))
+    carrito.cart.forEach(product => {
         cartinHTML += `<div class="flex">
         <div><p>Producto</p></div>
         <ul class="ml-10">
-            <li>Masa: ${product[0].name}</li>
-            <li>Tamaño: ${product[1].name}</li>
-            <li>Especialidad: ${product[2].name}</li>
-            <li>Precio: ${product[0].price + product[1].price + product[2].price}</li>
+            <li>Masa: ${product[1].name}</li>
+            <li>Tamaño: ${product[2].name}</li>
+            <li>Especialidad: ${product[3].name}</li>
+            <li>Precio: ${product[1].price + product[2].price + product[3].price}</li>
+            <p><button
+            class="deleteProduct px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
+            id="d-${product[0].productID}">Borrar producto</button></p>
         </ul>
     </div>`
-
     })
 
 
@@ -204,6 +226,28 @@ const showCart = () => {
     divCart.innerHTML = cartinHTML
 }
 
+document.addEventListener("DOMContentLoaded", event = () => {
+    let cartPreview = carrito.cart
+    showCart(cartPreview)
+})
+
+const clearCart = () => {
+    localStorage.clear()
+}
+
+const registerClickeventeDeletProduct = () => {
+    const btnDelProduct = document.getElementsByClassName("deleteProduct")
+    for (const btn of btnDelProduct) {
+        btn.onclick = carrito.deleteCart(e.target.id.split("-")[1])
+        console.log(btn)
+    }
+}
+
+//Mostrar menu mobile
+const showMenuMobile = () => {
+    document.getElementById('navMenu').style.display == 'block' ? document.getElementById('navMenu').style.display = 'none' : document.getElementById('navMenu').style.display = 'block'
+
+}
 
 startOrder()
 calculateTotalOrder()
