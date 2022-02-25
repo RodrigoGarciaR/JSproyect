@@ -14,15 +14,13 @@ class Carrito {
         JSON.parse(localStorage.getItem('cart')) && JSON.parse(localStorage.getItem('cart')).forEach(element => this.cart.push(element))
     }
 
-    deleteCart(productID) {
-        console.log(productID)
-        // let productToDelete = JSON.parse(localStorage.getItem('cart'))
-        // console.log(productToDelete)
-        // let productIndex = productToDelete.findIndex(e => e[0].productID === productID)
-        // console.log(productIndex)
-        // productToDelete.splice(productIndex, 1)
-        // console.log(productToDelete)
-        // localStorage.setItem('cart', JSON.stringify(productToDelete))
+    deleteProductOfCart(event) {
+        const productID = event.target.id.split('-')[1]
+        let productToDelete = JSON.parse(localStorage.getItem('cart'))
+        let productIndex = productToDelete.findIndex(e => e[0].productID === parseFloat(productID))
+        productToDelete.splice(productIndex, 1)
+        localStorage.setItem('cart', JSON.stringify(productToDelete))
+        document.getElementById(`divDelete-${productID}`).remove()
     }
 }
 

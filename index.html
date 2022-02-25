@@ -25,27 +25,70 @@
             <i class="float-right mt-6 mr-10 text-white fas fa-bars" id="showMenu" onclick="showMenuMobile()"></i>
         </div>
         <nav id="navMenu" class="hidden col-span-3 my-auto lg:col-span-1 lg:block">
-            <ul class="mr-10 text-right text-white lg:flex lg:justify-end lg:gap-x-12">                
-                    <li><a href="./pages/pizza.html">Arma tu pizza</a></li>                              
-                    <li><a href="#">Mi orden</a></li>                
+            <ul class="mr-10 text-right text-white lg:flex lg:justify-end lg:gap-x-12">
+                <li>
+                    <a href="./pages/pizza.html">Arma tu pizza</a>
+                </li>
+                <li>
+                    <a href="./pages/complements.html">Complementos</a>
+                </li>
+                <li>
+                    <a href="#" data-modal-toggle="small-modal">Mi orden</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    
+    <!-- Modal Carrito -->
+    <div class="fixed left-0 right-0 z-50 justify-end hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full"
+        id="small-modal">
+        <div class="relative w-full h-full max-w-md px-4 md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+                        Carrito de productos
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="small-modal">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="my-10">
+                    <div id="cart" class="grid grid-cols-1 gap-3 m-10">
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <button data-modal-toggle="small-modal" type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Imagen hero -->
     <div>
         <img src="./images/slide1.jpg" alt="" class="w-full">
     </div>
     <!-- Complementos -->
-    <div class="my-10 text-center">Nuestros complementos</div>
+    <div class="my-10 text-center">
+        <h3 class="text-4xl font-bold text-[#9fcc37]">Nuestros complementos</h3>
+    </div>
 
     <div class="grid grid-cols-1 mx-4 lg:grid-cols-2">
         <div class="pb-2 lg:pr-3 lg:pb-0">
-            <a href="#"><img src="./images/oferta1.jpg" alt="" class="w-full"></a>
+            <a href="#"><img src="./images/oferta1.jpg" alt="" class="w-full transition-all duration-500 hover:translate-x-1 hover:-translate-y-1"></a>
         </div>
         <div class="pt-2 lg:pl-3 lg:pt-0">
-            <a href="#"><img src="./images/oferta2.jpg" alt="" class="w-full"></a>
+            <a href="#"><img src="./images/oferta2.jpg" alt="" class="w-full transition-all duration-500 hover:translate-x-1 hover:-translate-y-1"></a>
         </div>
         <div class="col-span-1 pt-4 text-center lg:col-span-2">
             <button
@@ -54,18 +97,14 @@
         </div>
     </div>
 
-
     <!-- Footer -->
-
     <footer class="bg-secondary-200">
         <div class="flex flex-col justify-around pt-3 lg:flex-row">
             <div class="mb-5 text-center text-white lg:text-left">
                 <h3>Menú</h3>
                 <ul>
-                    <a href="./pages/pizza.html">
-                        <li>Arma tu pizza</li>
-                    </a>
-                    <li>Complementos</li>
+                    <li><a href="./pages/pizza.html">Arma tu pizza</a></li>
+                    <li><a href="./pages/complements.html">Complementos</a></li>
                 </ul>
             </div>
             <div class="mb-5 text-center text-white lg:text-left">
@@ -85,7 +124,12 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/db.js"></script>
     <script src="./js/script.js"></script>
+
 </body>
 
 </html>

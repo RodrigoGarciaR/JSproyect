@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arma tu Pizza - Pizza Planeta</title>
+    <title>Complementos - Pizza Planeta</title>
     <!-- CSS Tailwind -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- FontAwesome -->
@@ -74,82 +74,20 @@
         </div>
     </div>
 
-    <!-- Cotizador -->
+    <!-- Productos -->
 
-    <h2 class="my-10 text-3xl text-center">Arma tu pizza</h2>
-
-    <div>
-        <!-- Elección de masa -->
-        <div id="massContainer">
-            <p class="text-xl text-center">Es el momento de elegir la masa de tu pizza</p>
-            <div id="mass" class="grid grid-cols-1 mx-4 justify-items-center md:grid-cols-3 lg:grid-cols-5">
-            </div>
-        </div>
-
-        <!-- Elección de tamnaño -->
-        <div id="sizeContainer" class="hidden">
-            <p class="text-xl text-center">¿En qué tamaño?</p>
-            <div id="size" class="grid grid-cols-1 mx-4 justify-items-center md:grid-cols-3 lg:grid-cols-5">
-            </div>
-        </div>
-
-        <!-- Elección de especialidad -->
-        <div id="specialityContainer" class="hidden">
-            <p class="text-xl text-center">¿Qué especialidad deseas?</p>
-            <div id="speciality" class="grid grid-cols-1 mx-4 justify-items-center md:grid-cols-3 lg:grid-cols-5">
-            </div>
-        </div>
-
-        <!-- Es correcta la pizza -->
-        <div id="question" class="hidden">
-            <p class="my-20 text-3xl text-center">¿Está correcta tu pizza?</p>
-            <div class="grid grid-cols-1 mb-10 justify-items-center">
-                <button
-                    class="min-w-[100px] px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
-                    id="confirmPreview">
-                    Sí
-                </button>
-                <button
-                    class="px-2 py-3 m-4 min-w-[100px] text-white transition-all duration-200 rounded shadow bg-primary-200 hover:bg-primary-50 shadow-primary-400"
-                    id="deletePreview">
-                    No
-                </button>
-            </div>
-        </div>
-        <div id="thanks" class="hidden">
-            <p class="my-20 text-3xl text-center">¡Tu pizza se agregó al carrito!</p>
-        </div>
-
-        <!-- Reiniciar proceso -->
-        <div id="reset" class="hidden">
-            <p class="my-20 text-3xl text-center">¿Deseas pedir otra pizza?</p>
-            <div class="grid grid-cols-1 mb-10 justify-items-center">
-                <button
-                    class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
-                    id="resetOrder">
-                    Empezar de nuevo
-                </button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Resumen de pedido -->
-
-    <p class="my-10 text-2xl text-center">Este es el resumen de tu pizza actual</p>
-    <p class="text-xl text-center">El total de tu pizza actual es de: $<span id="totalOrder"></span></p>
-    <div id="order" class="grid grid-cols-1 mx-4 mb-10 justify-items-center md:grid-cols-3 lg:grid-cols-5">
+    <div style="height: 200px; width: 100vw; background-color: brown;">
+        
     </div>
 
 
     <!-- Footer -->
-    <footer class="static bg-secondary-200 2xl:w-full 2xl:bottom-0 2xl:fixed">
+    <footer class="bg-secondary-200">
         <div class="flex flex-col justify-around pt-3 lg:flex-row">
             <div class="mb-5 text-center text-white lg:text-left">
                 <h3>Menú</h3>
                 <ul>
-                    <li><a href="./pizza.html">
-                            Arma tu pizza</a></li>
+                    <li><a href="./pizza.html">Arma tu pizza</a></li>
                     <li><a href="./complements.html">Complementos</a></li>
                 </ul>
             </div>
@@ -177,6 +115,22 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
     <script src="../js/db.js"></script>
     <script src="../js/script.js"></script>
+
+    <div id="speciality" class="grid grid-cols-1 mx-4 justify-items-center md:grid-cols-3 lg:grid-cols-5">
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-cover bg-original"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-italiana"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-sarten"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-orillaQueso"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-crunchy"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-mediana"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-grande"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-familiar"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-napolitana"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-hawaiana"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-pepperoni"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-vegetariana"></div>
+        <div class="hidden p-10 my-5 bg-center bg-no-repeat bg-contain bg-cuatroQuesos rounded-[50px]"></div>
+    </div>
 </body>
 
 </html>
