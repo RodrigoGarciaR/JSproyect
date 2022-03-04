@@ -194,18 +194,13 @@ const showOrder = () => {
         order += `<div class="p-10 my-5 bg-no-repeat bg-contain  bg-center bg-${product.name}">
             <p class="font-bold text-lg text-center">${product.name}</p>
             <p class="text-center">$ ${product.price}</p></div>`
-
     })
-
     divOrder.innerHTML = order
 }
 
 const calculateTotalOrder = () => {
     let sumaTotal = 0
-
     PREVIEW.forEach(p => sumaTotal += p.price)
-
-
     const totalOrder = document.getElementById("totalOrder")
     totalOrder.innerHTML = sumaTotal
 }
@@ -249,11 +244,6 @@ document.addEventListener("DOMContentLoaded", event = () => {
     let cartPreview = carrito.cart
     showCart(cartPreview)
 })
-
-const clearCart = () => {
-    // localStorage.clear()
-}
-
 
 
 //Mostrar menu mobile

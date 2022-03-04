@@ -1,0 +1,13 @@
+[
+    {"id": 2, "name": "arosCebolla", "price": 40},
+    {"id": 3, "name": "papas", "price": 40},
+    {"id": 4, "name": "dedosQueso", "price": 40},
+    {"id": 5, "name": "alitas", "price": 80},
+    {"id": 6, "name": "alitasBBQ", "price": 100},
+    {"id": 7, "name": "alitasRanch", "price": 90},
+    {"id": 8, "name": "refrescoManzana", "price": 30},
+    {"id": 9, "name": "refrescoToronja", "price": 30},
+    {"id": 10, "name": "refrescoNaranja", "price": 30},
+    {"id": 11, "name": "pastelChocolate", "price": 40},
+    {"id": 12, "name": "cheeseCake", "price": 40}
+]
