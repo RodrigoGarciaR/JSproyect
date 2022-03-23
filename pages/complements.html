@@ -42,16 +42,16 @@
     <!-- Modal Carrito -->
     <div class="fixed left-0 right-0 z-50 justify-end hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full"
         id="small-modal">
-        <div class="relative w-full h-full max-w-md px-4 md:h-auto">
+        <div class="relative w-full h-full max-w-xl px-4 md:h-auto animate__animated animate__slideInRight">
             <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative bg-white rounded-lg shadow">
                 <!-- Modal header -->
-                <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
-                    <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+                <div class="flex items-center justify-between p-5 border-b rounded-t">
+                    <h3 class="text-xl font-medium text-gray-900">
                         Carrito de productos
                     </h3>
                     <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                         data-modal-toggle="small-modal">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -65,10 +65,11 @@
                     <div id="cart" class="grid grid-cols-1 gap-3 m-10">
                     </div>
                 </div>
+
                 <!-- Modal footer -->
-                <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-toggle="small-modal" type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Pagar</button>
+                <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b">
+                    <a href="./checkout.html"><button data-modal-toggle="small-modal" type="button"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Pagar</button></a>
                 </div>
             </div>
         </div>
@@ -94,26 +95,25 @@
             <div class="mb-5 text-center text-white lg:text-left">
                 <h3>Contáctanos</h3>
                 <ul>
-                    <li>Teléfono</li>
-                    <li>WhatsApp</li>
-                    <li>Correo electrónico</li>
+                    <li>Teléfono: <a href="tel:5512345678">5512345678</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/5215512345678" target="_blank">+5215512345678</a></li>
+                    <li>Correo electrónico: <a href="mailto:hola@pizzaplaneta.com">hola@pizzaplaneta.com</a></li>
                 </ul>
             </div>
             <div class="mb-5 text-center text-white lg:text-left">
                 <h3>Síguenos</h3>
                 <ul>
-                    <li>Facebook</li>
-                    <li>Instagram</li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
-
-
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
     <script src="../js/complements.js"></script>
+    <script src="../js/cart.js"></script>
     <script src="../js/db.js"></script>
 
 </body>

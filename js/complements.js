@@ -1,29 +1,42 @@
-const Complements = document.getElementById('complements')
+let complementList = []
 
-const pedirData = async () => {
-    const resp = await fetch('../js/data.json')
-    const info = await resp.json()
+fetch('../js/data.json')
+    .then(response => response.json())
+    .then(complements => {
+        complementList = complements
+        showComplements(complements)
+    })
 
-    console.log(info)
 
-    info.forEach((post) => {
-        const div = document.createElement('div')
-        div.innerHTML = `
+const showComplements = complements => {
+    const div = document.getElementById('complements')
+    let html = ''
+
+    complements.forEach(complement => {
+        html += `
         <div>
-            <img src="https://w.wallhaven.cc/full/83/wallhaven-83jeky.jpg"
+        <div>
+            <img src="../images/complements/${complement.img}.png"
                 alt="" class="max-h-[200px]">
         </div>
         <div class="text-center">
-            <p>${post.name}</p>
-            <p>Precio: $${post.price}</p>
+            <p>${complement.name}</p>
+            <p>Precio: $${complement.price}</p>
             <button
-                class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow deleteProduct bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400">Agregar
+                class="addComplement px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400" id="c-${complement.id}">Agregar
                 al carrito</button>
         </div>
+        </div>
     `
-        Complements.append(div)
     })
+
+    div.innerHTML = html
+    SetEventClickAddComplement()
 }
 
-
-pedirData()
+const SetEventClickAddComplement = () => {
+    btnAddComplement = document.getElementsByClassName('addComplement')
+    for (const btn of btnAddComplement) {
+        btn.onclick = carrito.addComplement
+    }
+}

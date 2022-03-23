@@ -1,13 +1,13 @@
 [
-    {"id": 2, "name": "arosCebolla", "price": 40},
-    {"id": 3, "name": "papas", "price": 40},
-    {"id": 4, "name": "dedosQueso", "price": 40},
-    {"id": 5, "name": "alitas", "price": 80},
-    {"id": 6, "name": "alitasBBQ", "price": 100},
-    {"id": 7, "name": "alitasRanch", "price": 90},
-    {"id": 8, "name": "refrescoManzana", "price": 30},
-    {"id": 9, "name": "refrescoToronja", "price": 30},
-    {"id": 10, "name": "refrescoNaranja", "price": 30},
-    {"id": 11, "name": "pastelChocolate", "price": 40},
-    {"id": 12, "name": "cheeseCake", "price": 40}
+    {"id": 2, "name": "Aros de Cebolla", "price": 40, "img":"arosCebolla"},
+    {"id": 3, "name": "Papas a la Francesa", "price": 40, "img":"papasFrancesa"},
+    {"id": 4, "name": "Dedos de Queso", "price": 40, "img":"dedosQueso"},
+    {"id": 5, "name": "Alitas", "price": 80, "img":"alitas"},
+    {"id": 6, "name": "Alitas BBQ", "price": 100, "img":"alitasBBQ"},
+    {"id": 7, "name": "Alitas Ranch", "price": 90, "img":"alitasRanch"},
+    {"id": 8, "name": "Refresco de Manzana", "price": 30, "img":"refManzana"},
+    {"id": 9, "name": "Refresco de Toronja", "price": 30, "img":"refToronja"},
+    {"id": 10, "name": "Refresco de Naranja", "price": 30, "img":"refNaranja"},
+    {"id": 11, "name": "Pastel de Chocolate", "price": 40, "img":"pastelChoco"},
+    {"id": 12, "name": "Cheese Cake", "price": 40, "img":"cheeseCake"}
 ]

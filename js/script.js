@@ -5,7 +5,7 @@ const startOrder = () => {
     let divMass = document.getElementById("mass")
     let listMass = ""
     MASS.forEach(product => {
-        listMass += `<div class="p-10 my-5 bg-no-repeat bg-contain bg-center bg-${product.name}">
+        listMass += `<div class="animate__animated animate__zoomIn animate__faster p-10 my-5 bg-no-repeat bg-contain bg-center bg-${product.img}">
         <p class="font-bold text-lg text-center">${product.name}</p>
         <p class="text-center">$ ${product.price}</p>
 
@@ -45,7 +45,7 @@ const pickSize = () => {
     let divSize = document.getElementById("size")
     let listSize = ""
     SIZE.forEach(product => {
-        listSize += `<div class="p-10 my-5 bg-no-repeat bg-contain bg-center bg-${product.name}">
+        listSize += `<div class="animate__animated animate__zoomIn animate__faster p-10 my-5 bg-no-repeat bg-contain bg-center bg-${product.img}">
         <p class="font-bold text-lg text-center">${product.name}</p>
         <p class="text-center">$ ${product.price}</p>
 
@@ -83,7 +83,7 @@ const pickSpeciality = () => {
     let divSpeciality = document.getElementById("speciality")
     let listSpeciality = ""
     SPECIALITY.forEach(product => {
-        listSpeciality += `<div class="p-10 my-5 bg-cover bg-center bg-${product.name} rounded-[20px]">
+        listSpeciality += `<div class="animate__animated animate__zoomIn animate__faster xp-10 my-5 bg-cover bg-center bg-${product.img} rounded-[20px]">
             <p class="font-bold text-lg text-center">${product.name}</p>
             <p class="text-center">$ ${product.price}</p>
     
@@ -136,7 +136,21 @@ const confirmOrder = () => {
         document.getElementById("reset").style.display = "block"
         document.getElementById("thanks").style.display = "block"
         productIDinCart()
-        pushToCart()
+        let preCart = PREVIEW.slice()
+
+        carrito.addCart({
+            productID: preCart[0].productID,
+            name: "Pizza armada",
+            mass: preCart[1].name,
+            size: preCart[2].name,
+            specality: preCart[3].name,
+            price: preCart[1].price + preCart[2].price + preCart[3].price,
+            img: preCart[3].img,
+            qty: 1
+        })
+
+        preCart.splice(0, preCart.length)
+
         splicePreview()
         showOrder()
         showCart()
@@ -191,7 +205,7 @@ const showOrder = () => {
     let order = ""
 
     PREVIEW.forEach(product => {
-        order += `<div class="p-10 my-5 bg-no-repeat bg-contain  bg-center bg-${product.name}">
+        order += `<div class="p-10 my-5 bg-no-repeat bg-contain  bg-center bg-${product.img}">
             <p class="font-bold text-lg text-center">${product.name}</p>
             <p class="text-center">$ ${product.price}</p></div>`
     })
@@ -205,52 +219,7 @@ const calculateTotalOrder = () => {
     totalOrder.innerHTML = sumaTotal
 }
 
-//Sección carrito de compra
 
-const showCart = () => {
-    let divCart = document.getElementById("cart")
-    let cartinHTML = ""
-
-    carrito.cart.forEach(product => {
-        let totalProduct = product[1].price + product[2].price + product[3].price
-        cartinHTML += `<div class="flex cartPreview" id="divDelete-${product[0].productID}">
-        <div>
-            <p>Producto</p>
-        </div>
-        <ul class="ml-10">
-            <li>Masa: ${product[1].name}</li>
-            <li>Tamaño: ${product[2].name}</li>
-            <li>Especialidad: ${product[3].name}</li>
-            <li>Precio: ${totalProduct}</li>
-        </ul>
-        <div><button
-                class="px-2 py-3 m-4 text-white transition-all duration-200 rounded shadow deleteProduct bg-secondary-200 hover:bg-secondary-50 shadow-secondary-400"
-                id="d-${product[0].productID}">Borrar producto</button></div>
-    </div>`
-    })
-
-    divCart.innerHTML = cartinHTML
-    registerClickeventeDeletProduct()
-}
-
-const registerClickeventeDeletProduct = () => {
-    const deleteProduct = document.getElementsByClassName("deleteProduct")
-    for (const btn of deleteProduct) {
-        btn.onclick = carrito.deleteProductOfCart
-    }
-}
-
-document.addEventListener("DOMContentLoaded", event = () => {
-    let cartPreview = carrito.cart
-    showCart(cartPreview)
-})
-
-
-//Mostrar menu mobile
-const showMenuMobile = () => {
-    document.getElementById('navMenu').style.display == 'block' ? document.getElementById('navMenu').style.display = 'none' : document.getElementById('navMenu').style.display = 'block'
-
-}
 
 startOrder()
 calculateTotalOrder()
